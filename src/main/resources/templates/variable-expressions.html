@@ -14,5 +14,23 @@
     Carオブジェクトのspeedプロパティを表示<br>
     <span th:text="${car.speed}">1</span><br><br>
     <!-- car.speedはメソッドじゃなくて属性 -->
+
+    テキスト103ページ<br>
+    Carオブジェクトのspeedプロパティを表示<br>
+    <span th:object ="${car}">
+        <span th:text="*{speed}">dummy</span>
+    </span>
+    <br><br>
+
+    <table th:object="${car}">
+        <tr>
+            <th>スピードの値</th>
+            <td th:text="*{speed}">dummy</td>
+        </tr>
+        <tr>
+            <th>車体の色</th>
+            <td th:text="*{bodyColor}">dummy</td>
+        </tr>
+    </table>
 </body>
 </html>
