@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>入力画面</title>
+</head>
+<body>
+    <form action="@{/ex-17/create}" method="post">
+        名前：<input type="text" name="name"><br>
+        メールアドレス： <input type="text" name="email"><br>
+        性別：<input type="radio" name="gender" th:value="male">男<br>
+        &emsp;&emsp;&emsp; <input type="radio" name="gender" th:value="female">女<br>
+        
+        趣味：<!-- コントローラで配列に格納しているのでdivタグを使う -->
+        <span th:each="hobby : ${hobbyMap}">
+            <input type="checkbox" name="hobbyList" th:value="${hobby.value}">
+            <span th:text="${hobby.value}"></span><br>
+        </span>
+
+        好きな言語：
+            <select name="lang">
+                <option th:each="lang : ${languages}" th:value="${lang}" th:text="${lang}"></option>
+            </select>
+
+        <br><br>
+        <button>登録</button>
+    </form>
+    
+</body>
+</html>

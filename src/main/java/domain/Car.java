@@ -4,6 +4,7 @@ public class Car {
 
     private int speed;
     private int gas;
+    private String bodyColor;
 
     //プロパティ＝外部に公開する情報＝publicなもの＝ゲッターとセッター
     public int getSpeed(){
@@ -25,5 +26,15 @@ public class Car {
             gas = 0;
         }
     }
+
+    public String getBodyColor() {
+        return bodyColor;
+    }
+
+    public void setBodyColor(String bodyColor) {
+        this.bodyColor = bodyColor;
+    }
+
+    
 
 }
